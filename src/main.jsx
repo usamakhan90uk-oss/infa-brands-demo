@@ -20,29 +20,57 @@ const safeProductDescription =
 const products = [
   {
     id: 'product-01',
-    name: 'Product 01',
-    image: '/assets/products/infa-products-source-01.jpg',
+    name: 'Infa Blue Pack',
+    image: '/assets/products/crops/product-01.jpg',
     accent: 'aqua',
     description: safeProductDescription,
   },
   {
     id: 'product-02',
-    name: 'Product 02',
-    image: '/assets/products/infa-products-source-02.jpg',
+    name: 'Infa Blue Pack 02',
+    image: '/assets/products/crops/product-02.jpg',
     accent: 'pink',
     description: safeProductDescription,
   },
   {
     id: 'product-03',
-    name: 'Product 03',
-    image: '/assets/products/infa-products-source-01.jpg',
+    name: 'Infa Pink Pack',
+    image: '/assets/products/crops/product-03.jpg',
     accent: 'yellow',
     description: safeProductDescription,
   },
   {
     id: 'product-04',
-    name: 'Product 04',
-    image: '/assets/products/infa-products-source-02.jpg',
+    name: 'Infa Pink Pack 02',
+    image: '/assets/products/crops/product-04.jpg',
+    accent: 'blue',
+    description: safeProductDescription,
+  },
+  {
+    id: 'product-05',
+    name: 'Infa Green Pack',
+    image: '/assets/products/crops/product-05.jpg',
+    accent: 'aqua',
+    description: safeProductDescription,
+  },
+  {
+    id: 'product-06',
+    name: 'Infa Green Pack 02',
+    image: '/assets/products/crops/product-06.jpg',
+    accent: 'pink',
+    description: safeProductDescription,
+  },
+  {
+    id: 'product-07',
+    name: 'Infa Yellow Pack',
+    image: '/assets/products/crops/product-07.jpg',
+    accent: 'yellow',
+    description: safeProductDescription,
+  },
+  {
+    id: 'product-08',
+    name: 'Infa Yellow Pack 02',
+    image: '/assets/products/crops/product-08.jpg',
     accent: 'blue',
     description: safeProductDescription,
   },
@@ -293,19 +321,28 @@ function HomePage({ navigate, products, onProductSelect }) {
 }
 
 function ProductStack() {
+  const heroCrops = products.slice(0, 6);
+
   return (
-    <div className="product-stack" aria-label="Infa Brands product visuals">
-      <div className="stack-card stack-card-large">
+    <div className="product-stack crop-showcase" aria-label="Infa Brands product pack visuals">
+      <div className="stack-card stack-card-large crop-hero-card">
         <ProductImage
-          src="/assets/products/infa-products-source-01.jpg"
-          alt="Infa Brands product source visual 01"
+          src={products[0].image}
+          alt={`${products[0].name} visual`}
         />
       </div>
-      <div className="stack-card stack-card-small">
+      <div className="stack-card stack-card-small crop-hero-card">
         <ProductImage
-          src="/assets/products/infa-products-source-02.jpg"
-          alt="Infa Brands product source visual 02"
+          src={products[2].image}
+          alt={`${products[2].name} visual`}
         />
+      </div>
+      <div className="hero-crop-strip" aria-hidden="true">
+        {heroCrops.slice(1).map((product) => (
+          <span className="hero-crop-thumb" key={product.id}>
+            <img src={product.image} alt="" loading="lazy" />
+          </span>
+        ))}
       </div>
       <div className="stack-badge">
         <span>Product Catalogue</span>

@@ -26,6 +26,17 @@ No Google Drive links are referenced in the website code.
 
 The uploaded product/source files are included under `public/assets/products/`. The uploaded CDR preview reference images are included under `public/assets/reference/`.
 
+Individual product card images are cropped from the uploaded catalogue sheet and stored under:
+
+- `public/assets/products/crops/product-01.jpg`
+- `public/assets/products/crops/product-02.jpg`
+- `public/assets/products/crops/product-03.jpg`
+- `public/assets/products/crops/product-04.jpg`
+- `public/assets/products/crops/product-05.jpg`
+- `public/assets/products/crops/product-06.jpg`
+- `public/assets/products/crops/product-07.jpg`
+- `public/assets/products/crops/product-08.jpg`
+
 ## Setup
 
 Install dependencies:
