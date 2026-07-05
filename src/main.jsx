@@ -168,6 +168,7 @@ function Header({ currentRoute, menuOpen, setMenuOpen, navigate }) {
           }}
           aria-label="Infa Brands home"
         >
+          {/* Official separate logo PNG/SVG is still pending. Current wordmark is temporary. */}
           <span className="brand-symbol">IB</span>
           <span>
             <strong>Infa Brands</strong>
@@ -325,6 +326,8 @@ function FeatureCard({ title, text }) {
 }
 
 function ProductsPreview({ products, onProductSelect, navigate }) {
+  const featuredProducts = products.slice(0, 2);
+
   return (
     <section className="section section-blue">
       <div className="container section-heading-row">
@@ -340,8 +343,8 @@ function ProductsPreview({ products, onProductSelect, navigate }) {
           View all products
         </button>
       </div>
-      <div className="container product-grid">
-        {products.map((product) => (
+      <div className="container product-grid featured-product-grid">
+        {featuredProducts.map((product) => (
           <ProductCard
             key={product.id}
             product={product}

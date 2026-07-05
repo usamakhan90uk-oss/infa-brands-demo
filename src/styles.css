@@ -299,7 +299,7 @@ p {
 .hero-section {
   position: relative;
   overflow: hidden;
-  padding: 92px 0 82px;
+  padding: 80px 0 90px;
   border-bottom: 1px solid rgba(223, 233, 238, 0.72);
 }
 
@@ -320,8 +320,8 @@ p {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(330px, 0.78fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 0.78fr) minmax(500px, 1.22fr);
+  gap: 48px;
   align-items: center;
 }
 
@@ -340,33 +340,41 @@ p {
 
 .product-stack {
   position: relative;
-  min-height: 520px;
+  display: grid;
+  min-height: 590px;
+  grid-template-columns: minmax(150px, 0.38fr) minmax(360px, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  padding: 18px;
+  border: 1px solid rgba(223, 233, 238, 0.92);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(239, 250, 251, 0.82)),
+    #ffffff;
+  box-shadow: 0 24px 64px rgba(32, 77, 101, 0.14);
 }
 
 .stack-card {
-  position: absolute;
   overflow: hidden;
-  border: 10px solid white;
+  border: 1px solid rgba(223, 233, 238, 0.9);
   border-radius: var(--radius);
   background: white;
-  box-shadow: var(--shadow);
+  box-shadow: 0 18px 34px rgba(32, 77, 101, 0.1);
 }
 
 .stack-card-large {
-  inset: 0 40px 88px 0;
+  min-height: 100%;
 }
 
 .stack-card-small {
-  right: 0;
-  bottom: 0;
-  width: 62%;
-  aspect-ratio: 1.05;
+  align-self: center;
+  min-height: 72%;
 }
 
 .stack-badge {
   position: absolute;
-  left: 26px;
-  bottom: 38px;
+  right: 34px;
+  bottom: 34px;
   display: grid;
   gap: 3px;
   padding: 14px 18px;
@@ -454,7 +462,12 @@ p {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  gap: 22px;
+}
+
+.featured-product-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
 }
 
 .page-product-grid {
@@ -467,6 +480,9 @@ p {
   display: flex;
   min-height: 100%;
   flex-direction: column;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 253, 253, 0.96)),
+    #ffffff;
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -501,11 +517,19 @@ p {
 }
 
 .product-image-frame {
-  height: 220px;
-  margin: 14px 14px 0;
+  height: 300px;
+  margin: 18px 18px 0;
   overflow: hidden;
   border-radius: var(--radius);
-  background: #edf8f8;
+  background:
+    linear-gradient(180deg, #ffffff, #f8fcfc),
+    #ffffff;
+  border: 1px solid rgba(223, 233, 238, 0.82);
+}
+
+.featured-product-grid .product-image-frame {
+  height: 430px;
+  margin: 20px 20px 0;
 }
 
 .product-card-body {
@@ -513,7 +537,15 @@ p {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  padding: 18px;
+  padding: 20px;
+}
+
+.featured-product-grid .product-card-body {
+  padding: 24px;
+}
+
+.featured-product-grid .product-card h3 {
+  font-size: 1.35rem;
 }
 
 .product-tag {
@@ -528,6 +560,10 @@ p {
   flex: 1;
   margin: 12px 0 18px;
   font-size: 0.94rem;
+}
+
+.featured-product-grid .product-card p {
+  font-size: 1rem;
 }
 
 .image-fallback {
@@ -948,7 +984,7 @@ p {
   }
 
   .product-stack {
-    min-height: 440px;
+    min-height: 500px;
   }
 
   .product-grid,
@@ -967,6 +1003,10 @@ p {
 
   .modal-image {
     min-height: 320px;
+  }
+
+  .featured-product-grid .product-image-frame {
+    height: 380px;
   }
 }
 
@@ -1027,19 +1067,21 @@ p {
   }
 
   .product-stack {
-    min-height: 360px;
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 14px;
   }
 
   .stack-card-large {
-    inset: 0 34px 74px 0;
+    min-height: 460px;
   }
 
   .stack-card-small {
-    width: 64%;
+    min-height: 300px;
   }
 
   .stack-badge {
-    left: 14px;
+    right: 24px;
     bottom: 24px;
   }
 
@@ -1060,7 +1102,11 @@ p {
   }
 
   .product-image-frame {
-    height: 240px;
+    height: 280px;
+  }
+
+  .featured-product-grid .product-image-frame {
+    height: 360px;
   }
 
   .inquiry-form {
@@ -1096,14 +1142,26 @@ p {
   }
 
   .product-stack {
-    min-height: 310px;
+    min-height: auto;
   }
 
   .stack-card {
-    border-width: 7px;
+    border-width: 1px;
+  }
+
+  .stack-card-large {
+    min-height: 390px;
+  }
+
+  .stack-card-small {
+    min-height: 250px;
   }
 
   .product-image-frame {
-    height: 210px;
+    height: 250px;
+  }
+
+  .featured-product-grid .product-image-frame {
+    height: 320px;
   }
 }

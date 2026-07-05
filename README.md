@@ -66,6 +66,7 @@ The included `vercel.json` rewrites all routes to `index.html` so direct links s
 
 ## Production Notes
 
+- Official separate logo PNG/SVG is still pending. Current wordmark is temporary.
 - The header currently uses a polished text-based `Infa Brands` wordmark. Replace it with the final official logo PNG/SVG when the client provides it.
 - Final official logo PNG/SVG and individual product packshots can replace the current uploaded composite source images when client provides production-ready files.
 - Product names and descriptions are intentionally safe and generic until official client-approved product information is available.
