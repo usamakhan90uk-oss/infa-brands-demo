@@ -15,7 +15,7 @@ The demo includes:
 
 ## Asset Paths Used
 
-The website code uses local public asset URLs only:
+The website code uses local public asset URLs only, backed by uploaded Infa Brands assets stored in `public/assets/...`:
 
 - `/assets/products/infa-products-source-01.jpg`
 - `/assets/products/infa-products-source-02.jpg`
@@ -24,7 +24,7 @@ The website code uses local public asset URLs only:
 
 No Google Drive links are referenced in the website code.
 
-This workspace did not include the official image uploads when the demo was scaffolded, so neutral temporary local visuals were added at the expected paths to keep the preview working. Replace them with the client-provided source images when available.
+The uploaded product/source files are included under `public/assets/products/`. The uploaded CDR preview reference images are included under `public/assets/reference/`.
 
 ## Setup
 
@@ -67,6 +67,6 @@ The included `vercel.json` rewrites all routes to `index.html` so direct links s
 ## Production Notes
 
 - The header currently uses a polished text-based `Infa Brands` wordmark. Replace it with the final official logo PNG/SVG when the client provides it.
-- Final official logo PNG/SVG and individual product packshots should replace the current low-quality composite source images when client provides them.
+- Final official logo PNG/SVG and individual product packshots can replace the current uploaded composite source images when client provides production-ready files.
 - Product names and descriptions are intentionally safe and generic until official client-approved product information is available.
 - The contact form is static for demo purposes and should be connected to a WordPress form handler in production.
