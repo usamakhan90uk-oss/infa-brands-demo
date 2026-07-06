@@ -25,28 +25,28 @@ const safeProductDescription =
 const products = [
   {
     id: 'product-01',
-    name: 'Infa Blue Pack',
+    name: 'Infa Aqua Pack',
     image: '/assets/products/crops/product-01.jpg',
     accent: 'aqua',
     description: safeProductDescription,
   },
   {
     id: 'product-02',
-    name: 'Infa Blue Pack 02',
+    name: 'Infa Blue Pack',
     image: '/assets/products/crops/product-02.jpg',
     accent: 'pink',
     description: safeProductDescription,
   },
   {
     id: 'product-03',
-    name: 'Infa Pink Pack',
+    name: 'Infa Rose Pack',
     image: '/assets/products/crops/product-03.jpg',
     accent: 'yellow',
     description: safeProductDescription,
   },
   {
     id: 'product-04',
-    name: 'Infa Pink Pack 02',
+    name: 'Infa Pink Pack',
     image: '/assets/products/crops/product-04.jpg',
     accent: 'blue',
     description: safeProductDescription,
@@ -60,7 +60,7 @@ const products = [
   },
   {
     id: 'product-06',
-    name: 'Infa Green Pack 02',
+    name: 'Infa Mint Pack',
     image: '/assets/products/crops/product-06.jpg',
     accent: 'pink',
     description: safeProductDescription,
@@ -74,7 +74,7 @@ const products = [
   },
   {
     id: 'product-08',
-    name: 'Infa Yellow Pack 02',
+    name: 'Infa Gold Pack',
     image: '/assets/products/crops/product-08.jpg',
     accent: 'blue',
     description: safeProductDescription,
@@ -421,7 +421,7 @@ function FeatureCard({ title, text }) {
 }
 
 function ProductsPreview({ products, onProductSelect, navigate }) {
-  const featuredProducts = products.slice(0, 2);
+  const featuredProducts = products.slice(0, 3);
 
   return (
     <section className="section section-blue">
@@ -746,15 +746,6 @@ function ContactPage() {
               <input type="tel" name="phone" placeholder="+92..." required />
             </label>
             <label>
-              Email
-              <input
-                type="email"
-                name="email"
-                placeholder="you@example.com"
-                required
-              />
-            </label>
-            <label>
               Product Interest
               <select name="productInterest" defaultValue="">
                 <option value="" disabled>
@@ -797,10 +788,6 @@ function ContactList() {
       <div>
         <span>Phone</span>
         <a href={contact.phoneHref}>{contact.phoneDisplay}</a>
-      </div>
-      <div>
-        <span>Email</span>
-        <a href={`mailto:${contact.email}`}>{contact.email}</a>
       </div>
       <div>
         <span>Facebook</span>
