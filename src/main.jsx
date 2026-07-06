@@ -332,7 +332,7 @@ function HomePage({ navigate, products, onProductSelect }) {
 
 function BrandHighlight() {
   return (
-    <section className="section brand-highlight-section reveal-section">
+    <section className="section brand-highlight-section">
       <div className="container brand-highlight">
         <div className="brand-highlight-copy">
           <p className="eyebrow">Latest Brand Highlight</p>
@@ -355,14 +355,14 @@ function BrandHighlight() {
 
 function OfficialChannels() {
   return (
-    <section className="section channels-section reveal-section">
+    <section className="section channels-section">
       <div className="container channels-card">
         <div>
           <p className="eyebrow">Official Channels</p>
           <h2>Follow Infa Brands</h2>
           <p>
-            Follow Infa Brands for product updates, catalogue information, and
-            official brand announcements.
+            Use the official social links for product updates, catalogue
+            information, and brand announcements.
           </p>
         </div>
         <div className="channel-actions">
@@ -398,7 +398,7 @@ function ProductStack() {
       <div className="hero-crop-strip" aria-hidden="true">
         {heroCrops.slice(1).map((product) => (
           <span className="hero-crop-thumb" key={product.id}>
-            <img src={product.image} alt="" loading="lazy" />
+            <img src={product.image} alt="" loading="eager" />
           </span>
         ))}
       </div>
@@ -497,7 +497,7 @@ function ProductImage({ src, alt }) {
     <img
       src={src}
       alt={alt}
-      loading="lazy"
+      loading="eager"
       onError={() => setFailed(true)}
     />
   );
@@ -653,12 +653,16 @@ function AboutPage() {
           <article className="presence-card">
             <p className="eyebrow">Our Presence in Pakistan</p>
             <h2>Karachi and Quetta offices</h2>
-            <dl>
-              <dt>Head Office</dt>
-              <dd>{contact.headOffice}</dd>
-              <dt>Sales Office</dt>
-              <dd>{contact.salesOffice}</dd>
-            </dl>
+            <div className="office-list">
+              <div className="office-row">
+                <strong>Head Office</strong>
+                <p>{contact.headOffice}</p>
+              </div>
+              <div className="office-row">
+                <strong>Sales Office</strong>
+                <p>{contact.salesOffice}</p>
+              </div>
+            </div>
           </article>
         </div>
       </section>

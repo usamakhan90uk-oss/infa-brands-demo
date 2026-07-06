@@ -327,16 +327,6 @@ p {
   border-bottom: 1px solid rgba(223, 233, 238, 0.72);
 }
 
-.hero-copy,
-.split-intro,
-.section-heading-row,
-.faq-layout,
-.blog-grid,
-.contact-band-inner,
-.reveal-section {
-  animation: fadeUp 680ms ease both;
-}
-
 .hero-section::after {
   content: "";
   position: absolute;
@@ -419,11 +409,6 @@ p {
   display: grid;
   place-items: center;
   padding: 22px;
-  animation: productFloat 6s ease-in-out infinite;
-}
-
-.crop-hero-card:nth-child(2) {
-  animation-delay: 900ms;
 }
 
 .crop-hero-card img {
@@ -562,9 +547,7 @@ p {
 
 .product-card {
   position: relative;
-  overflow: hidden;
   display: flex;
-  min-height: 100%;
   flex-direction: column;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 253, 253, 0.96)),
@@ -585,6 +568,8 @@ p {
 
 .product-card::before {
   content: "";
+  display: block;
+  flex: 0 0 auto;
   height: 5px;
   width: 100%;
   background: var(--aqua);
@@ -703,6 +688,8 @@ p {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
   padding: 18px;
 }
 
@@ -715,7 +702,6 @@ p {
 }
 
 .product-tag {
-  margin-bottom: 10px;
   color: var(--brand-red);
   font-size: 0.76rem;
   font-weight: 850;
@@ -723,10 +709,13 @@ p {
 }
 
 .product-card p {
-  flex: 1;
-  margin: 10px 0 16px;
+  margin: 0 0 8px;
   font-size: 0.9rem;
   line-height: 1.58;
+}
+
+.product-card .btn {
+  margin-top: auto;
 }
 
 .featured-product-grid .product-card p {
@@ -837,14 +826,14 @@ p {
 
 .blog-card {
   display: flex;
-  min-height: 0;
   flex-direction: column;
+  gap: 14px;
   padding: 24px;
 }
 
 .blog-card span {
   display: inline-flex;
-  margin-bottom: 20px;
+  align-self: flex-start;
   padding: 7px 10px;
   border-radius: 999px;
   background: #fff5d9;
@@ -856,7 +845,7 @@ p {
 .blog-card a {
   display: inline-flex;
   margin-top: auto;
-  padding-top: 22px;
+  padding-top: 8px;
   color: var(--blue-dark);
   font-weight: 820;
 }
@@ -936,18 +925,26 @@ p {
   margin-bottom: 0;
 }
 
-.presence-card dl {
-  margin: 24px 0 0;
+.office-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
 }
 
-.presence-card dt {
-  margin-top: 18px;
+.office-row {
+  display: grid;
+  gap: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.office-row strong {
   color: var(--blue-dark);
   font-weight: 850;
 }
 
-.presence-card dd {
-  margin: 6px 0 0;
+.office-row p {
+  margin: 0;
   color: var(--muted);
   line-height: 1.55;
 }
@@ -1161,27 +1158,6 @@ p {
 .footer-bottom p {
   margin: 0;
   font-size: 0.9rem;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes productFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
 }
 
 @keyframes modalBackdropIn {
