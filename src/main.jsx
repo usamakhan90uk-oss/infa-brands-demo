@@ -14,6 +14,11 @@ const contact = {
     'Office # 9, 2nd Floor, Zeenat Medicine Market, Fatimah Jinnah Road, Quetta - Pakistan',
 };
 
+const brandAssets = {
+  logo: '/assets/logo/infa-brands-logo.png',
+  banner: '/assets/brand/infa-calendar-2026-banner.jpg',
+};
+
 const safeProductDescription =
   'Product details will be updated with official client-approved information. For availability and inquiry, please contact Infa Brands.';
 
@@ -196,8 +201,9 @@ function Header({ currentRoute, menuOpen, setMenuOpen, navigate }) {
           }}
           aria-label="Infa Brands home"
         >
-          {/* Official separate logo PNG/SVG is still pending. Current wordmark is temporary. */}
-          <span className="brand-symbol">IB</span>
+          <span className="brand-logo-wrap">
+            <img className="brand-logo-img" src={brandAssets.logo} alt="Infa Brands logo" />
+          </span>
           <span>
             <strong>Infa Brands</strong>
             <small>Corporate Catalogue</small>
@@ -311,12 +317,64 @@ function HomePage({ navigate, products, onProductSelect }) {
         navigate={navigate}
       />
 
+      <BrandHighlight />
+
+      <OfficialChannels />
+
       <FaqSection />
 
       <BlogsPreview navigate={navigate} />
 
       <ContactCta navigate={navigate} />
     </>
+  );
+}
+
+function BrandHighlight() {
+  return (
+    <section className="section brand-highlight-section reveal-section">
+      <div className="container brand-highlight">
+        <div className="brand-highlight-copy">
+          <p className="eyebrow">Latest Brand Highlight</p>
+          <h2>Infa Brands Updates</h2>
+          <p>
+            Explore the latest brand visuals, catalogue updates, and product
+            information shared through Infa Brands' official channels.
+          </p>
+        </div>
+        <div className="brand-banner-card">
+          <img
+            src={brandAssets.banner}
+            alt="Infa Brands Calendar 2026 brand artwork"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function OfficialChannels() {
+  return (
+    <section className="section channels-section reveal-section">
+      <div className="container channels-card">
+        <div>
+          <p className="eyebrow">Official Channels</p>
+          <h2>Follow Infa Brands</h2>
+          <p>
+            Follow Infa Brands for product updates, catalogue information, and
+            official brand announcements.
+          </p>
+        </div>
+        <div className="channel-actions">
+          <a className="btn btn-primary" href={contact.instagram} target="_blank" rel="noreferrer">
+            View Instagram
+          </a>
+          <a className="btn btn-secondary" href={contact.facebook} target="_blank" rel="noreferrer">
+            View Facebook
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -499,7 +557,9 @@ function FaqItem({ faq, defaultOpen }) {
         <span>{faq.question}</span>
         <span aria-hidden="true">{open ? '-' : '+'}</span>
       </button>
-      {open && <p>{faq.answer}</p>}
+      <div className="faq-answer" aria-hidden={!open}>
+        <p>{faq.answer}</p>
+      </div>
     </article>
   );
 }
@@ -842,7 +902,9 @@ function Footer({ navigate }) {
               navigate('/');
             }}
           >
-            <span className="brand-symbol">IB</span>
+            <span className="brand-logo-wrap">
+              <img className="brand-logo-img" src={brandAssets.logo} alt="Infa Brands logo" />
+            </span>
             <span>
               <strong>Infa Brands</strong>
               <small>Corporate Catalogue</small>

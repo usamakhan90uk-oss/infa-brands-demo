@@ -26,6 +26,11 @@ No Google Drive links are referenced in the website code.
 
 The uploaded product/source files are included under `public/assets/products/`. The uploaded CDR preview reference images are included under `public/assets/reference/`.
 
+The extracted brand logo and cropped brand banner are included at:
+
+- `public/assets/logo/infa-brands-logo.png`
+- `public/assets/brand/infa-calendar-2026-banner.jpg`
+
 Individual product card images are cropped from the uploaded catalogue sheet and stored under:
 
 - `public/assets/products/crops/product-01.jpg`
@@ -77,8 +82,7 @@ The included `vercel.json` rewrites all routes to `index.html` so direct links s
 
 ## Production Notes
 
-- Official separate logo PNG/SVG is still pending. Current wordmark is temporary.
-- The header currently uses a polished text-based `Infa Brands` wordmark. Replace it with the final official logo PNG/SVG when the client provides it.
-- Final official logo PNG/SVG and individual product packshots can replace the current uploaded composite source images when client provides production-ready files.
+- The header and footer use the extracted Infa Brands logo paired with clean `Infa Brands` text.
+- Official high-resolution logo/product files can replace the current extracted logo, banner, and crop assets when client provides production-ready files.
 - Product names and descriptions are intentionally safe and generic until official client-approved product information is available.
 - The contact form is static for demo purposes and should be connected to a WordPress form handler in production.
