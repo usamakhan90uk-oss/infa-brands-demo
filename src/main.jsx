@@ -92,7 +92,7 @@ const blogPosts = [
     title: 'Why Quality and Trust Matter',
     category: 'Quality & Care',
     excerpt:
-      'A reliable catalogue experience starts with organized details, careful communication, and responsive support.',
+      'A reliable product information experience starts with organized details, careful communication, and responsive support.',
   },
   {
     title: 'How to Inquire About Infa Brands Products',
@@ -206,7 +206,7 @@ function Header({ currentRoute, menuOpen, setMenuOpen, navigate }) {
           </span>
           <span>
             <strong>Infa Brands</strong>
-            <small>Corporate Catalogue</small>
+            <small>Marketing</small>
           </span>
         </a>
 
@@ -305,7 +305,7 @@ function HomePage({ navigate, products, onProductSelect }) {
           </p>
         </div>
         <div className="container feature-grid">
-          <FeatureCard title="Quality Focused" text="A careful, organized catalogue experience built around trust and clarity." />
+          <FeatureCard title="Quality Focused" text="A careful, organized product experience built around trust and clarity." />
           <FeatureCard title="Trusted Product Range" text="Product information is presented cleanly so customers can inquire with ease." />
           <FeatureCard title="Easy Inquiry Support" text="Direct contact channels help customers, partners, and distributors reach the team." />
         </div>
@@ -335,11 +335,10 @@ function BrandHighlight() {
     <section className="section brand-highlight-section">
       <div className="container brand-highlight">
         <div className="brand-highlight-copy">
-          <p className="eyebrow">Latest Brand Highlight</p>
-          <h2>Infa Brands Updates</h2>
+          <p className="eyebrow">Latest Brand Update</p>
+          <h2>Infa Brands Calendar 2026</h2>
           <p>
-            Explore the latest brand visuals, catalogue updates, and product
-            information shared through Infa Brands' official channels.
+            Explore the latest brand visuals, product updates, and official information shared through Infa Brands' channels.
           </p>
         </div>
         <div className="brand-banner-card">
@@ -361,8 +360,7 @@ function OfficialChannels() {
           <p className="eyebrow">Official Channels</p>
           <h2>Follow Infa Brands</h2>
           <p>
-            Use the official social links for product updates, catalogue
-            information, and brand announcements.
+            Use the official social links for product updates, company information, and brand announcements.
           </p>
         </div>
         <div className="channel-actions">
@@ -403,7 +401,7 @@ function ProductStack() {
         ))}
       </div>
       <div className="stack-badge">
-        <span>Product Catalogue</span>
+        <span>Products</span>
         <strong>Pakistan</strong>
       </div>
     </div>
@@ -428,7 +426,7 @@ function ProductsPreview({ products, onProductSelect, navigate }) {
       <div className="container section-heading-row">
         <div>
           <p className="eyebrow">Our Products</p>
-          <h2>Product catalogue preview</h2>
+          <h2>Our Products</h2>
         </div>
         <button
           className="text-link"
@@ -508,7 +506,7 @@ function FaqSection() {
     {
       question: 'What does Infa Brands offer?',
       answer:
-        'Infa Brands presents a product-focused catalogue experience for customers, partners, and distributors seeking clear product information.',
+        'Infa Brands presents a product-focused information experience for customers, partners, and distributors seeking clear product details.',
     },
     {
       question: 'How can I inquire about products?',
@@ -674,9 +672,9 @@ function ProductsPage({ products, onProductSelect }) {
   return (
     <>
       <PageHero
-        eyebrow="Product Catalogue"
+        eyebrow="Products"
         title="Our Products"
-        text="Browse the current Infa Brands catalogue preview and send an inquiry for availability or official product details."
+        text="Browse the current Infa Brands products and send an inquiry for availability or official product details."
       />
       <section className="section section-blue">
         <div className="container product-grid page-product-grid">
@@ -898,7 +896,7 @@ function Footer({ navigate }) {
             </span>
             <span>
               <strong>Infa Brands</strong>
-              <small>Corporate Catalogue</small>
+              <small>Marketing</small>
             </span>
           </a>
           <p>
